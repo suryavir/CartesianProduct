@@ -73,7 +73,7 @@ public class CartesianProduct {
 	
 	
 	
-	//Function to create the placeholder array and store the values inside brackets inside ArrayList
+//Function to create the placeholder array and store the values inside brackets inside ArrayList
 	public static void CreateArraySimple(ArrayList<Character> chararraynew)
 	{
 		
@@ -111,7 +111,7 @@ public class CartesianProduct {
 		Collections.reverse(characters);
 	}
 	
-	//Function to create the placeholder array and store the values inside brackets inside ArrayList
+//Function to create the placeholder array and store the values inside brackets inside ArrayList
 	public static ArrayList<ArrayList<Character>> CreateArrayNested(ArrayList<Character> chararraynew)
 	{
 		
@@ -387,7 +387,7 @@ public class CartesianProduct {
         
 	}
 	
-	//Function to compare Actual Result my program received and the Expected correct result
+//Function to compare Actual Result my program received and the Expected correct result
 	public static boolean compare(ArrayList<String> actualresult, ArrayList<String> expectedresult)
 	{
 		
