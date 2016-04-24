@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class CartesianProduct {
 	
-//Instance Variables
+	//Instance Variables
 	static ArrayList<ArrayList<Character>> characters;
 	static ArrayList<Character> placeholder;
 	static ArrayList<ArrayList<Character>> CartesianProductTemp;
@@ -16,7 +16,7 @@ public class CartesianProduct {
 	static ArrayList<String> CartesianProductStrings=new ArrayList<String>();
 	static ArrayList<Character> braces=new ArrayList<Character>();
 
-	
+//Function to Add Braces to ArrayList, and check if nested or simple expression
 	public static boolean ComputeBraces(ArrayList<Character> chararraynew)
 	{
 		for(char ch:chararraynew)
@@ -194,8 +194,6 @@ public class CartesianProduct {
 	public static void CalculateCP(int index, ArrayList<Character> charsinbraces)
 	{
 		
-		
-		
 		if(CartesianProductTemp.isEmpty())
 		{
 			
@@ -260,7 +258,7 @@ public class CartesianProduct {
 		
 	}
 	
-//Function to convert the 
+//Function to convert the ArrayList of chars to String
 	public static String convertToString(ArrayList<Character> chrs)
 	{
 		
@@ -273,7 +271,8 @@ public class CartesianProduct {
 		
 		return st.toString();
 	}
-	
+
+//Function for Unit Testing
 	public static void Test()
 	{
 		
@@ -369,6 +368,7 @@ public class CartesianProduct {
         
 	}
 	
+	//Function to compare Actual Result my program received and the Expected correct result
 	public static boolean compare(ArrayList<String> actualresult, ArrayList<String> expectedresult)
 	{
 		
@@ -395,6 +395,8 @@ public class CartesianProduct {
 		return true;
 	}
 	
+	
+//Function to be called everytime a new expression is entered	
 	public static ArrayList<String> MainMethod(String expression)
 	{
 		char[] chararray=expression.toCharArray();
