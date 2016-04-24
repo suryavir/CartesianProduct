@@ -498,6 +498,7 @@ public class CartesianProduct {
 				Scanner readernew = new Scanner(System.in);
 				String expressionnew= readernew.nextLine();
 				System.out.println(MainMethod(expressionnew));
+				readernew.close();
 				break;
 			
 		default:
