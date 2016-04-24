@@ -5,6 +5,24 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/*
+Braces tell the bash shell to generate what's called the "Cartesian product" of the given set, where elements of the set are comma-separated. 
+The problem at hand is to implement this feature of bash, i.e. produce the same output as bash does for a given input string.
+
+For example:
+$ echo a{b,c}d{e,f,g}hi
+abdehi abdfhi abdghi acdehi acdfhi acdghi
+$ echo a{b,c{d,e,f}g,h}ij{k,l}
+abijk abijl acdgijk acdgijl acegijk acegijl acfgijk acfgijl ahijk ahijl
+
+In your response, please send:
+(1) Your solution, written in Java, Scala, Python, Ruby, Go, or JavaScript
+(2) Instructions on how to run the code
+(3) Any unit tests that you wrote to demonstrate the correctness of your solution
+
+Created by Suryavir Sood
+*/
+
 public class CartesianProduct {
 	
 	//Instance Variables
@@ -281,6 +299,7 @@ public class CartesianProduct {
 		//First Test
         String test1_input = "a{b,c}d{e,f,g}hi";
        
+        //Added in ArrayList so that while comparing sequence of the result is inconsequential
         ArrayList<String> test1_expectedresult=new ArrayList<String>();
         test1_expectedresult.add("abdehi");
         test1_expectedresult.add("abdfhi");
