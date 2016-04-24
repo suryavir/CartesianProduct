@@ -3,9 +3,11 @@ package com.sood.CartesianProduct;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class CartesianProduct {
 	
+//Instance Variables
 	static ArrayList<ArrayList<Character>> characters;
 	static ArrayList<Character> placeholder;
 	static ArrayList<ArrayList<Character>> CartesianProductTemp;
@@ -279,6 +281,7 @@ public class CartesianProduct {
 		
 		//First Test
         String test1_input = "a{b,c}d{e,f,g}hi";
+       
         ArrayList<String> test1_expectedresult=new ArrayList<String>();
         test1_expectedresult.add("abdehi");
         test1_expectedresult.add("abdfhi");
@@ -288,7 +291,11 @@ public class CartesianProduct {
         test1_expectedresult.add("acdghi");
         ArrayList<String >test1_actualresult=MainMethod(test1_input);
         boolean test1_result = compare(test1_actualresult,test1_expectedresult);
-        System.out.println("test1: " + test1_result);   
+        
+        System.out.println("the input is"+ test1_input);
+        System.out.println("\nExpected Result"+ test1_expectedresult);
+        System.out.println("\nActual Result"+ test1_actualresult);
+        System.out.println("\ntest1 output: " + test1_result);   
         
         //Second Test
         String test2_input = "a{b,c}d{e,f,g}hi{j,k}";
@@ -307,6 +314,10 @@ public class CartesianProduct {
         test2_expectedresult.add("acdghik");
         ArrayList<String> test2_actualresult=MainMethod(test2_input);
         boolean test2_result = compare(test2_actualresult,test2_expectedresult);
+        
+        System.out.println("the input is"+ test2_input);
+        System.out.println("\nExpected Result"+ test2_expectedresult);
+        System.out.println("\nActual Result"+ test2_actualresult);
         System.out.println("test2: " + test2_result);   
         
         
@@ -320,6 +331,11 @@ public class CartesianProduct {
         boolean test3_result = compare(test3_actualresult,test3_expectedresult);
         System.out.println("test3: " + test3_result);   
         
+        System.out.println("the input is"+ test3_input);
+        System.out.println("\nExpected Result"+ test3_expectedresult);
+        System.out.println("\nActual Result"+ test3_actualresult);
+        System.out.println("test3: " + test3_result);   
+        
         //Fourth Test- Wrong expectedresult added
         String test4_input = "{z,y}";
         ArrayList<String> test4_expectedresult=new ArrayList<String>();
@@ -327,7 +343,11 @@ public class CartesianProduct {
         test4_expectedresult.add("a");
         ArrayList<String >test4_actualresult=MainMethod(test4_input);
         boolean test4_result = compare(test4_actualresult,test4_expectedresult);
-        System.out.println("test4: " + test4_result);  
+        
+        System.out.println("the input is"+ test4_input);
+        System.out.println("\nExpected Result"+ test4_expectedresult);
+        System.out.println("\nActual Result"+ test4_actualresult);
+        System.out.println("test3: " + test4_result);
         
     	
 		System.out.println("\n SOLVING NESTED SETS");
@@ -341,7 +361,11 @@ public class CartesianProduct {
 	    test5_expectedresult.add("acdghi");
 	    ArrayList<String >test5_actualresult=MainMethod(test1_input);
 	    boolean test5_result = compare(test5_actualresult,test5_expectedresult);
-	    System.out.println("test5: " + test5_result);   
+	    
+	    System.out.println("the input is"+ test5_input);
+        System.out.println("\nExpected Result"+ test5_expectedresult);
+        System.out.println("\nActual Result"+ test5_actualresult);
+        System.out.println("test3: " + test5_result);
         
 	}
 	
@@ -432,7 +456,34 @@ public class CartesianProduct {
 		
 		String expression="a{b,c}d{e,f,g}hi{j,k}";
 		//System.out.println(MainMethod(expression));
-		Test();
+		//Test();
+		
+		
+		//Created Scanner Object to read from System.in
+		Scanner reader = new Scanner(System.in); 
+		System.out.println("Options to Choose from: \n 1. Test Cases \n 2. Enter expression yourself");
+		int options= reader.nextInt();
+		
+		switch(options)
+		{
+		case 1: 
+				//If 1 then run all test cases
+				Test();
+				break;
+			
+		case 2:
+				//If 2 then take input from User
+				System.out.println("Enter the Expression: ");
+				Scanner readernew = new Scanner(System.in);
+				String expressionnew= readernew.nextLine();
+				System.out.println(MainMethod(expressionnew));
+				break;
+			
+		default:
+			System.out.println("Please enter available options- 1 or 2");
+		}
+		
+		reader.close();
 	
 		
 		
